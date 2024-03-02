@@ -17,7 +17,7 @@ function Slider() {
           e.preventDefault();
           speed.value = parseFloat(e.target.value);
         }}
-        className="rounded-lg"
+        className="w-20 rounded-lg"
       />
       <p>Fast</p>
     </div>
