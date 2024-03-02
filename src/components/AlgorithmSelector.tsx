@@ -1,7 +1,8 @@
 import { signal } from "@preact/signals-react";
 import registry from "../algorithms/registry";
+import { Algorithm } from "../algorithms/types";
 
-const algorithm = signal<Algorithm>(registry[0]);
+export const algorithm = signal<Algorithm>(registry[0]);
 function AlgorithmSelector() {
   return (
     <select
