@@ -1,7 +1,9 @@
 export type Frame = {
   values: [number, number];
-  type: "current" | "sorted" | "swapping" | "comparing";
+  type: FrameType;
 };
+
+export type FrameType = "default" | "sorted" | "swapping" | "comparing";
 
 export type Algorithm = {
   name: string;
