@@ -1,6 +1,13 @@
 import { signal } from "@preact/signals-react";
 
-const speed = signal<number>(1);
+const min = 1;
+const max = 100;
+
+const speed = signal<number>(min);
+
+export function speedValue() {
+  return (min / speed.value) * max * 10;
+}
 
 function Slider() {
   return (
@@ -10,8 +17,8 @@ function Slider() {
         type="range"
         name="speed"
         id="speed"
-        min={1}
-        max={100}
+        min={min}
+        max={max}
         value={speed.value}
         onChange={(e) => {
           e.preventDefault();
