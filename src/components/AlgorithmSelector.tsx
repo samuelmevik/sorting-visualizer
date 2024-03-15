@@ -1,6 +1,7 @@
 import { signal } from "@preact/signals-react";
 import registry from "../algorithms/registry";
 import { Algorithm } from "../algorithms/types";
+import { isSorting } from "./PlayButton";
 
 export const algorithm = signal<Algorithm>(registry[0]);
 function AlgorithmSelector() {
@@ -8,17 +9,16 @@ function AlgorithmSelector() {
     <select
       name="algorithm"
       id="algorithm"
-      disabled={false}
+      disabled={isSorting.value}
       onChange={(e) => {
         e.preventDefault();
         const selectedAlgorithm = registry.find(
-          (algo) => algo.name === e.target.value,
+          (algo) => algo.name === e.target.value
         );
         if (!selectedAlgorithm) {
           console.error("Algorithm not found");
           return;
         }
-        console.log("Selected algorithm", selectedAlgorithm.name);
         algorithm.value = selectedAlgorithm;
       }}
     >
