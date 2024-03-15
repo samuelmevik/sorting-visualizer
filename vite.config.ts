@@ -10,4 +10,5 @@ export default defineConfig({
       },
     }),
   ],
+  base: "https://samuelmevik.github.io/sorting-visualizer/",
 });
