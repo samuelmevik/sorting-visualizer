@@ -1,4 +1,6 @@
 import AlgorithmSelector from "./AlgorithmSelector";
+import PlayButton from "./PlayButton";
+import RandomizeButton from "./RandomizeButton";
 import Slider from "./Slider";
 
 function Header() {
@@ -8,6 +10,8 @@ function Header() {
       <div className="flex-1"></div>
       <Slider />
       <AlgorithmSelector />
+      <RandomizeButton />
+      <PlayButton />
     </header>
   );
 }
